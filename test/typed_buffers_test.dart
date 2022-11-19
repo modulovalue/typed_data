@@ -6,8 +6,8 @@
 import 'dart:typed_data';
 
 import 'package:test/test.dart';
-import 'package:typed_data/src/typed_buffer.dart';
-import 'package:typed_data/src/typed_buffer_mixin.dart';
+import 'package:typed_data2/src/typed_buffer.dart';
+import 'package:typed_data2/src/typed_buffer_mixin.dart';
 
 const List<int> browserSafeIntSamples = [
   0x8000000000000000, // 2^63
