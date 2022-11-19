@@ -7,6 +7,7 @@ import 'dart:typed_data';
 
 import 'package:test/test.dart';
 import 'package:typed_data/src/typed_buffer.dart';
+import 'package:typed_data/src/typed_buffer_mixin.dart';
 
 const List<int> browserSafeIntSamples = [
   0x8000000000000000, // 2^63
@@ -317,7 +318,7 @@ void testFloat32x4Buffer(List<double> floatSamples) {
 void testFloatBuffer(
   int bitSize,
   List<double> samples,
-  TypedDataBuffer<double> Function() create,
+  TypedDataBufferMixin<double, List<double>> Function() create,
   double Function(double v) round,
 ) {
   test('Float${bitSize}Buffer', () {
@@ -379,7 +380,7 @@ void testFloatBuffer(
 void testInt(
   List<int> intSamples,
   int bits,
-  TypedDataBuffer<int> Function(int length) buffer, {
+  TypedDataBufferMixin<int, List<int>> Function(int length) buffer, {
   String? testOn,
 }) {
   var min = -(1 << (bits - 1));
@@ -453,7 +454,7 @@ void testIntBuffer(
   int bits,
   int min,
   int max,
-  TypedDataBuffer<int> Function(int length) create,
+  TypedDataBufferMixin<int, List<int>> Function(int length) create,
   int Function(int val) round,
 ) {
   assert(round(min) == min);
@@ -528,7 +529,7 @@ void testIntBuffer(
 void testUint(
   List<int> intSamples,
   int bits,
-  TypedDataBuffer<int> Function(int length) buffer, {
+  TypedDataBufferMixin<int, List<int>> Function(int length) buffer, {
   String? testOn,
 }) {
   var min = 0;

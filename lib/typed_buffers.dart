@@ -13,4 +13,5 @@
 /// be larger than what the list is using.
 library typed_data.typed_buffers;
 
-export 'src/typed_buffer.dart' hide TypedDataBuffer;
+export 'src/typed_buffer.dart';
+export 'src/typed_buffer_mixin.dart';
